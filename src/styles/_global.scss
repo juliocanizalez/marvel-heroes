@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+%marvel-font{
+  font-family: 'Marvel', sans-serif;
+}
+
+%raleway-font {
+  font-family: 'Raleway', sans-serif;
+}
+
+%layout {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+// font width section
+$font-bold: 700;
+$font-medium: 500;
+$font-regular: 400;
+
+// global colors:
+$primary: #ED1D24;
+$backgroud: #fff;
+$black: #000000;
+$black-sec: #151515;
+
+// font colors
+$font-black: #151515;
+$font-gray: #999999;
+
+//global rules
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Scrollbar settings
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2373c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ED1D24;
+}
