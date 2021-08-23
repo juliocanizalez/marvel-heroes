@@ -8,6 +8,7 @@ import RoutePaths from './RoutePaths';
 import Navbar from '../components/Navbar/Navbar';
 import Loading from '../components/Loading/Loading';
 import Footer from '../components/Footer/Footer';
+import NotFound from '../containers/NotFound/NotFound';
 
 const Home = lazy(() => import('../containers/Home/Home'));
 const Characters = lazy(() => import('../containers/Characters/Characters'));
@@ -34,6 +35,7 @@ const App: React.FC = () => (
             <Route exact path={RoutePaths.CHARACTER_BOOKMARKS} component={CharactersBookmarks} />
             <Route exact path={RoutePaths.STORIES_BOOKMARKS} component={StoriesBookmarks} />
             <Route exact path={RoutePaths.COMIC_BOOKMARKS} component={ComicsBookmarks} />
+            <Route component={NotFound} />
           </Switch>
         </Suspense>
         <Footer />
