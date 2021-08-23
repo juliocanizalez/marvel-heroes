@@ -1,0 +1,110 @@
+@use '../../styles/global';
+
+.navbar{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  @extend %marvel-font;
+  &-logo{
+    justify-self: start;
+    width: 80px;
+    height: auto;
+  }
+  &-menu{
+    display: flex;
+    justify-content: space-around;
+    div{
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      gap: 0.9rem;
+      width: 70vw;
+      justify-content: center;
+      li{    
+        list-style: none;
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+    li{    
+      list-style: none;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+  &-icon{
+    display: none;
+  }
+}
+
+.navbar-menu__link{
+  color: global.$font-black;
+  font-weight: global.$font-bold;
+}
+
+.navbar-menu__link--active {
+  color: global.$primary;
+}
+
+@media screen and (max-width: 460px){ 
+  .navbar{
+    position: relative;
+    &-icon{
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.6rem;
+      padding: 0.6rem 1rem;
+    }
+    &-logo{
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.6rem 1rem;
+      width: 120px;
+
+    }
+    &-menu{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: -100%;
+      transition: all 0.3s ease;
+      background-color: global.$backgroud;
+      li{
+        a{
+          font-size: 1.6rem;
+        }
+      }
+      &.show{
+        left: 0;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+      div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.9rem;
+        li{
+          a{
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-menu__link{
+    text-align: center;
+    width: 100%;
+    display: table;
+  }
+}
