@@ -38,3 +38,24 @@
     }
   }
 }
+
+@media screen and(max-width: 450px) {
+  .footer{
+    grid-template-columns: 1fr;
+    &-map{
+      text-align: center;
+      &__links{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &-social{
+      margin-top: 1rem;
+      align-self: center;
+      justify-self: center;
+      a{
+        margin-right: 0.6rem;
+      }
+    }
+  }
+}
