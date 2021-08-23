@@ -70,11 +70,13 @@
 
     }
     &-menu{
+      height: 98vh;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       width: 100%;
       position: absolute;
-      top: 60px;
+      top: 140px;
       left: -100%;
       transition: all 0.3s ease;
       background-color: global.$backgroud;
