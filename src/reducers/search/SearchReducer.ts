@@ -17,7 +17,7 @@ const initState = {
   data: null,
 };
 
-const searchReducer = (state: ISearchState = initState, action: SearchActions) => {
+const SearchReducer = (state: ISearchState = initState, action: SearchActions) => {
   const getBaseQueryString = () => ({
     apikey: process.env.REACT_APP_PUBLIC_KEY,
     limit: state.limit,
@@ -135,4 +135,4 @@ const searchReducer = (state: ISearchState = initState, action: SearchActions) =
   }
 };
 
-export default searchReducer;
+export default SearchReducer;
