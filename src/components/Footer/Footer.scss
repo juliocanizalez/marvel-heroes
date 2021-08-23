@@ -1,0 +1,40 @@
+@use '../../styles/global';
+
+.footer{
+  width: 100%;
+  display: grid;
+  padding: 2rem 0;
+  grid-template-columns: 3fr 2fr;
+  &-map{
+    display: flex;
+    flex-direction: column;
+    @extend %raleway-font;
+    margin-top: 1rem;
+    &__title{
+      margin-bottom: 1rem;
+    }
+    a{
+      margin-right: 0.6rem;
+      text-decoration: none;
+      color: global.$font-gray;
+      transition: 0.4s;
+      &:hover{
+        font-weight: global.$font-medium;
+        color: global.$font-black;
+      }
+    }
+  }
+  &-social{
+    align-self: end;
+    justify-self: end;
+    a{
+      margin-left: 0.6rem;
+      transition: 0.4s;
+      text-decoration: none;
+      color: global.$font-gray;
+      &:hover{
+        color: global.$font-black;
+      }
+    }
+  }
+}
