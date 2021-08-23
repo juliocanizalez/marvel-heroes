@@ -12,7 +12,7 @@
 %layout {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 // font width section
@@ -35,6 +35,10 @@ $font-gray: #999999;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  @extend %layout;
 }
 
 //Scrollbar settings
