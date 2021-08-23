@@ -7,6 +7,7 @@ import store, { persistor } from '../store/store';
 import RoutePaths from './RoutePaths';
 import Navbar from '../components/Navbar/Navbar';
 import Loading from '../components/Loading/Loading';
+import Footer from '../components/Footer/Footer';
 
 const Home = lazy(() => import('../containers/Home/Home'));
 const Characters = lazy(() => import('../containers/Characters/Characters'));
@@ -35,6 +36,7 @@ const App: React.FC = () => (
             <Route exact path={RoutePaths.COMIC_BOOKMARKS} component={ComicsBookmarks} />
           </Switch>
         </Suspense>
+        <Footer />
       </Router>
     </PersistGate>
   </Provider>
