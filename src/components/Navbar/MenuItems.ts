@@ -9,7 +9,7 @@ export enum Characters {
 }
 
 export enum Bookmarks {
-  URL = '/bookmarks',
+  URL = '/bookmarks/characters',
   TITLE = 'Bookmarks',
 }
 
