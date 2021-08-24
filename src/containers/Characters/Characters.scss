@@ -1,0 +1,57 @@
+@use '../../styles/global';
+
+.main-content{
+  text-align: center;
+  @extend %marvel-font;
+}
+
+.back-button {
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: global.$primary;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.action-btn{
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: global.$primary;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-right: 1rem;
+}
+
+.search-header__list{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.search-title{
+  margin-top: 1.4rem;
+  font-weight: global.$font-bold;
+  font-size: 1.5rem;
+}
+
+.page-title{
+  h1{
+    font-size: 2.5rem;
+  }
+}
+
+.search-select{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.cards-content{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+  }
