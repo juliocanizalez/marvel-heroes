@@ -58,3 +58,62 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+.main-content{
+  @extend %marvel-font;
+}
+
+.back-button {
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: global.$primary;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.image-header-title{
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.comic-image {
+  margin: 10px 10px 0px;
+  height: 350px;
+  width: 200px;
+  min-width: 250px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.comic-description{
+  display: flex;
+  width: 70%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.actions-title{
+  font-weight: global.$font-bold;
+  margin-bottom: 0.4rem;
+}
+
+.action-btn{
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: global.$primary;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-right: 1rem;
+}
+
+.related{
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
