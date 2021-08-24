@@ -2,7 +2,7 @@
 import React from 'react';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { shortenText } from '../../utils/utils';
-import 'components/Select/Select.scss';
+import './Select.scss';
 
 interface ISelect<T extends IRequiredValues> {
   items: T[];
