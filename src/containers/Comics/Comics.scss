@@ -1,0 +1,60 @@
+@use '../../styles/global';
+
+.comics{
+  text-align: center;
+  @extend %marvel-font;
+  &-page__title{
+    h1{
+      font-size: 2.3rem;
+      font-weight: global.$font-bold;
+    }
+  }
+  &-search{
+    form{
+      display: flex;
+      flex-direction: column;
+      .comics-search__title{
+        margin-top: 1.7rem;
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  &-header{
+    font-size: 1.3rem;
+    margin-right: 1rem;
+  }
+  &-value{
+    .search-input{
+      outline: none;
+      height: 1.9rem;
+      padding: 0.2rem 1rem;
+      @extend %marvel-font;
+      font-size: 1.2rem;
+      width: 250px;
+    }
+    &__select{
+      margin-left: 1rem;
+      height: 1.9rem;
+      @extend %marvel-font;
+      padding: 0.2rem 1rem;
+      font-size: 1.1rem;
+      width: 200px;
+    }
+  }
+}
+
+.cards{
+  margin-top: 2rem;
+  width: 100%;
+  &-content{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
