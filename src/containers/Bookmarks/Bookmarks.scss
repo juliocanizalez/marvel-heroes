@@ -1,0 +1,135 @@
+@use '../../styles/global';
+
+$bg-title-image: 'https://arc-anglerfish-arc2-prod-tbt.s3.amazonaws.com/public/HM2EV3GEOII6TKTRIBWI6S7HAY.jpg';
+$primary: #262627;
+
+.main-content{
+  @extend %marvel-font;
+}
+
+.bookmarks-title-div {
+  color: global.$font-black;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+
+}
+
+.bookmark-menu-title-div {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.bookmark-menu-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bookmark-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bookmark-menu-btn {
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  width: 150px;
+  background-color: global.$primary;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.26);
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: box-shadow 0.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.bookmark-menu-btn:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.bookmark-menu-btn:focus {
+  outline: 0;
+}
+
+.bookmark-action-btn {
+  outline: 0;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  max-width: 250px;
+  width: 100%;
+  background-color: gray;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.26);
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: box-shadow 0.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  cursor: pointer;
+}
+
+.bookmark-action-btn:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: darken($color: gray, $amount: 10);
+  color: white;
+}
+.bookmark-action-btn:focus {
+  outline: 0;
+}
+
+.delete-bookmarks {
+  background-color: global.$primary;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: darken($color: global.$primary, $amount: 10);
+  }
+}
+
+.reset-hidden-items {
+  background-color: $primary;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: darken($color: $primary, $amount: 10);
+  }
+}
+
+.cards {
+  display: grid;
+  place-items: center;
+}
+
+.cards-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.error-message {
+  text-align: center;
+  margin: 50px 15%;
+}
