@@ -8,7 +8,6 @@ import RoutePaths from './RoutePaths';
 import Navbar from '../components/Navbar/Navbar';
 import Loading from '../components/Loading/Loading';
 import Footer from '../components/Footer/Footer';
-import NotFound from '../containers/NotFound/NotFound';
 
 const Home = lazy(() => import('../containers/Home/Home'));
 const Characters = lazy(() => import('../containers/Characters/Characters'));
@@ -17,6 +16,8 @@ const Comics = lazy(() => import('../containers/Comics/Comics'));
 const CharactersBookmarks = lazy(() => import('../containers/Bookmarks/CharacterBookmarks'));
 const StoriesBookmarks = lazy(() => import('../containers/Bookmarks/StoriesBookmarks'));
 const ComicsBookmarks = lazy(() => import('../containers/Bookmarks/ComicBookmarks'));
+const ComicPage = lazy(() => import('../containers/Comics/ViewComic'));
+const ViewCharacter = lazy(() => import('../containers/Characters/ViewCharacter'));
 
 const App: React.FC = () => (
   <Provider store={store}>
@@ -35,7 +36,8 @@ const App: React.FC = () => (
             <Route exact path={RoutePaths.CHARACTER_BOOKMARKS} component={CharactersBookmarks} />
             <Route exact path={RoutePaths.STORIES_BOOKMARKS} component={StoriesBookmarks} />
             <Route exact path={RoutePaths.COMIC_BOOKMARKS} component={ComicsBookmarks} />
-            <Route component={NotFound} />
+            <Route exact path={RoutePaths.COMIC_DETAILS} component={ComicPage} />
+            <Route exact path={RoutePaths.CHARACTER_DETAILS} component={ViewCharacter} />
           </Switch>
         </Suspense>
         <Footer />
