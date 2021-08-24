@@ -146,36 +146,36 @@ const Comics: React.FC = () => {
   }, [results, hiddenItems]);
 
   return (
-    <div className='comic-main-content mb-5'>
-      <div className='comic-page-title-div'>
+    <div className='comics'>
+      <div className='comics-page__title'>
         <h1>Comics</h1>
       </div>
-      <div className='comic-search-filters-form mb-5'>
+      <div className='comics-search'>
         <form onSubmit={handleSubmit}>
-          <div className='comic-search-title'>Search your comic</div>
-          <div className='search-header'>Title</div>
-          <div className='search-header'>Format</div>
-          <div className='search-value'>
-            <input
-              type='text'
-              name='title'
-              placeholder="Comic's title"
-              autoComplete='off'
-              className='search-input'
-              value={title}
-              onChange={handleTitleChange}
-            />
-          </div>
-
-          <div className='search-value'>
-            <select className='search-select' value={format} onChange={handleFormatChange}>
-              <option value=''>Select a format</option>
-              {FormatOptions.map((format) => (
-                <option key={format.value} value={format.value}>
-                  {shortenText(format.name, 20)}
-                </option>
-              ))}
-            </select>
+          <h3 className='comics-search__title'>Search your comic</h3>
+          <div className='search'>
+            <div className='search-header'>Title</div>
+            <div className='search-value'>
+              <input
+                type='text'
+                name='title'
+                placeholder="Comic's title"
+                autoComplete='off'
+                className='search-input'
+                value={title}
+                onChange={handleTitleChange}
+              />
+            </div>
+            <div className='search-value'>
+              <select className='search-value__select' value={format} onChange={handleFormatChange}>
+                <option value=''>Select a format</option>
+                {FormatOptions.map((format) => (
+                  <option key={format.value} value={format.value}>
+                    {shortenText(format.name, 20)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </form>
       </div>
