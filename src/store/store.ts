@@ -7,6 +7,7 @@ import SearchReducer from '../reducers/search/SearchReducer';
 import SearchComicReducer from '../reducers/searchComic/SearchComicReducer';
 import ViewItemReducer from '../reducers/viewItem/ViewItemReducer';
 import LocalItemsReducer from '../reducers/localItems/LocalItemsReducer';
+import SearchStoryReducer from '../reducers/searchStory/SearchStoryReducer';
 
 type WindowWithDevTools = Window & {
   __REDUX_DEVTOOLS_EXTENSION__: () => StoreEnhancer<unknown, {}>;
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   searchComic: SearchComicReducer,
   viewItem: ViewItemReducer,
   localItems: LocalItemsReducer,
+  searchStory: SearchStoryReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
