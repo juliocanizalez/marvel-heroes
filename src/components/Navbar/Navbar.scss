@@ -3,6 +3,7 @@
 .navbar{
   height: 60px;
   width: 100%;
+  max-width: 1300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,12 +16,12 @@
   }
   &-menu{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 60%;
     div{
       display: grid;
       grid-template-columns: repeat(5, auto);
       gap: 0.9rem;
-      width: 70vw;
       justify-content: center;
       li{    
         list-style: none;
