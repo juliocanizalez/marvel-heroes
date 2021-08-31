@@ -100,9 +100,9 @@ const ComicBookmarks: React.FC = () => {
         <div className='bookmarks-title'>
           <h1>Comic Bookmarks</h1>
         </div>
-        <div className='bookmark-menu'>
+        <div className='bookmarks-menu'>
           <p>View your bookmarks in:</p>
-          <div className='bookmark-menu__options'>
+          <div className='bookmarks-menu__options'>
             <Link type='button' to={RouteNames.CHARACTER_BOOKMARKS}>
               Characters
             </Link>
@@ -111,9 +111,9 @@ const ComicBookmarks: React.FC = () => {
             </Link>
           </div>
         </div>
-        <div className='bookmark-menu'>
+        <div className='bookmarks-menu'>
           <p>Actions:</p>
-          <div className='bookmark-menu__options'>
+          <div className='bookmarks-menu__options'>
             <button
               type='button'
               className='delete-bookmarks'
