@@ -3,24 +3,43 @@
 $bg-title-image: 'https://arc-anglerfish-arc2-prod-tbt.s3.amazonaws.com/public/HM2EV3GEOII6TKTRIBWI6S7HAY.jpg';
 $primary: #262627;
 
-.main-content{
+.bookmarks{
   @extend %marvel-font;
-}
-
-.bookmarks-title-div {
-  color: global.$font-black;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 20px;
-
-}
-
-.bookmark-menu-title-div {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+  &-title{
+    color: global.$font-black;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    h1{
+      font-size: 2.8rem;
+    }
+  }
+  &-menu{
+    text-align: center;
+    p{
+      font-size: 1.7rem;
+    }
+    &__options{
+      margin: 1rem 0;
+      a{
+        margin: 2rem 1rem;
+        text-decoration: none;
+        background-color: global.$primary;
+        padding: 0.2rem 1rem;
+        color: #fff;
+        transition: 0.4s;
+        &:hover{
+          background-color: #e2373c;
+        }
+      }
+      button{
+        margin: 1rem;
+        padding: 0.3rem 1rem;
+      }
+    }
+  }
 }
 
 .bookmark-menu-title {
@@ -132,4 +151,5 @@ $primary: #262627;
 .error-message {
   text-align: center;
   margin: 50px 15%;
+  color: #bb2f2f;
 }
