@@ -96,47 +96,47 @@ const CharacterBookmarks: React.FC = () => {
 
   return (
     <>
-      <div className='main-content'>
-        <div className='bookmarks-title-div'>
+      <div className='bookmarks'>
+        <div className='bookmarks-title'>
           <h1>Character Bookmarks</h1>
         </div>
-        <div className='bookmark-menu-title-div'>
-          <p className='bookmark-menu-title'>View your bookmarks in:</p>
+        <div className='bookmarks-menu'>
+          <p>View your bookmarks in:</p>
+          <div className='bookmarks-menu__options'>
+            <Link type='button' to={RouteNames.COMIC_BOOKMARKS}>
+              Comics
+            </Link>
+            <Link type='button' to={RouteNames.STORIES_BOOKMARKS}>
+              Stories
+            </Link>
+          </div>
         </div>
-        <div className='bookmark-menu'>
-          <Link type='button' className='bookmark-menu-btn' to={RouteNames.COMIC_BOOKMARKS}>
-            Comics
-          </Link>
-          <Link type='button' className='bookmark-menu-btn' to={RouteNames.STORIES_BOOKMARKS}>
-            Stories
-          </Link>
-        </div>
-        <div className='bookmark-menu-title-div'>
-          <p className='bookmark-menu-title'>Actions:</p>
-        </div>
-        <div className='bookmark-menu'>
-          <button
-            type='button'
-            className='bookmark-action-btn delete-bookmarks'
-            onClick={() => {
-              handleAction('BOOKMARK');
-            }}
-          >
-            <FontAwesomeIcon icon={faTrash} />
-            {'\u00A0'}
-            Delete all bookmarks
-          </button>
-          <button
-            type='button'
-            className='bookmark-action-btn reset-hidden-items'
-            onClick={() => {
-              handleAction('HIDDEN');
-            }}
-          >
-            <FontAwesomeIcon icon={faEye} />
-            {'\u00A0'}
-            Reset hidden items
-          </button>
+        <div className='bookmarks-menu'>
+          <p>Actions:</p>
+          <div className='bookmarks-menu__options'>
+            <button
+              type='button'
+              className='delete-bookmarks'
+              onClick={() => {
+                handleAction('BOOKMARK');
+              }}
+            >
+              <FontAwesomeIcon icon={faTrash} />
+              {'\u00A0'}
+              Delete all bookmarks
+            </button>
+            <button
+              type='button'
+              className='reset-hidden-items'
+              onClick={() => {
+                handleAction('HIDDEN');
+              }}
+            >
+              <FontAwesomeIcon icon={faEye} />
+              {'\u00A0'}
+              Reset hidden items
+            </button>
+          </div>
         </div>
         {loading && <Loading />}
         <div className='cards'>
