@@ -19,6 +19,7 @@ const StoriesBookmarks = lazy(() => import('../containers/Bookmarks/StoriesBookm
 const ComicsBookmarks = lazy(() => import('../containers/Bookmarks/ComicBookmarks'));
 const ComicPage = lazy(() => import('../containers/Comics/ViewComic'));
 const ViewCharacter = lazy(() => import('../containers/Characters/ViewCharacter'));
+const ViewStory = lazy(() => import('../containers/Stories/ViewStory'));
 
 const App: React.FC = () => (
   <Provider store={store}>
@@ -39,6 +40,7 @@ const App: React.FC = () => (
             <Route exact path={RoutePaths.COMIC_BOOKMARKS} component={ComicsBookmarks} />
             <Route exact path={RoutePaths.COMIC_DETAILS} component={ComicPage} />
             <Route exact path={RoutePaths.CHARACTER_DETAILS} component={ViewCharacter} />
+            <Route exact path={RoutePaths.STORIES_DETAILS} component={ViewStory} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
