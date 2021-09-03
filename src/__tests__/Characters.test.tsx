@@ -29,8 +29,7 @@ describe('Test on Characters component', () => {
     );
 
     await waitFor(() => {
-      expect(container.querySelector('.card')).not.toBeNull();
-      expect(container.querySelector('.loading-container')).toBeNull();
+      expect(container.querySelector('.cards')).not.toBeNull();
       expect(container).toMatchSnapshot();
     });
   });
@@ -176,7 +175,7 @@ describe('Mock store tests', () => {
 
   testStore.dispatch = jest.fn();
 
-  jest.mock('actions/search', () => ({
+  jest.mock('../actions/Search', () => ({
     setBaseUrl: jest.fn(),
     setName: jest.fn(),
     setAllParams: jest.fn(),
