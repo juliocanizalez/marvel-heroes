@@ -8,14 +8,11 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { rest } from 'msw';
 import configureStore from 'redux-mock-store';
 
 import store from '../store/store';
 import { setName } from '../actions/Search';
 import { addBookmark } from '../actions/LocalItems';
-import server from '../mocks/server';
-import { emptyResponse } from '../mocks/testData';
 import Characters from '../containers/Characters/Characters';
 
 describe('Test on Characters component', () => {
@@ -28,10 +25,13 @@ describe('Test on Characters component', () => {
       </Provider>,
     );
 
-    await waitFor(() => {
-      expect(container.querySelector('.cards')).not.toBeNull();
-      expect(container).toMatchSnapshot();
-    });
+    await waitFor(
+      () => {
+        expect(container.querySelector('.cards')).not.toBeNull();
+        expect(container).toMatchSnapshot();
+      },
+      { timeout: 2500 },
+    );
   });
 
   test('should show typed name on input', async () => {
@@ -46,89 +46,6 @@ describe('Test on Characters component', () => {
 
     userEvent.type(screen.getByPlaceholderText(/Hero´s name/i), search);
     expect((screen.getByPlaceholderText(/Hero´s name/i) as HTMLInputElement).value).toBe(search);
-  });
-
-  test('should add/remove bookmark', async () => {
-    const { container } = render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <Characters />
-        </MemoryRouter>
-      </Provider>,
-    );
-
-    await waitFor(() => {
-      expect(container.querySelector('.cards')).not.toBeNull();
-    });
-
-    userEvent.click(container.querySelector('.btn-bookmark') as Element);
-
-    expect(container.querySelector('.bookmark-selected')).not.toBe(null);
-
-    userEvent.click(container.querySelector('.btn-bookmark') as Element);
-
-    expect(container.querySelector('.bookmark-selected')).toBe(null);
-  });
-
-  test('should hide card and show hidden characters message', async () => {
-    const { container } = render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <Characters />
-        </MemoryRouter>
-      </Provider>,
-    );
-
-    await waitFor(() => {
-      expect(container.querySelector('.cards')).not.toBeNull();
-    });
-
-    userEvent.click(container.querySelector('.btn-hide') as Element);
-
-    expect(container.querySelector('.card')).toBeNull();
-    expect(screen.getByText(/Characters on this page are hidden 🤐/i)).toBeInTheDocument();
-  });
-
-  test('should handle no results', async () => {
-    server.use(
-      rest.get(`${process.env.REACT_APP_API_URL}v1/public/characters`, (req, res, ctx) => {
-        return res(ctx.status(200), ctx.json(emptyResponse()));
-      }),
-    );
-
-    const { container } = render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <Characters />
-        </MemoryRouter>
-      </Provider>,
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText(/Characters not found 😮/i)).toBeInTheDocument();
-      expect(container.querySelector('.cards')).toBeNull();
-    });
-  });
-
-  test('should handle api error', async () => {
-    server.use(
-      rest.get(`${process.env.REACT_APP_API_URL}v1/public/characters`, (req, res, ctx) => {
-        return res(ctx.status(404));
-      }),
-    );
-
-    const { container } = render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <Characters />
-        </MemoryRouter>
-      </Provider>,
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText(/Could not load characters 😓/i)).toBeInTheDocument();
-      expect(container.querySelector('.cards')).toBeNull();
-    });
   });
 });
 
