@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on Characters component Should render component correctly 1`] = `
+<div>
+  <div
+    class="main-content "
+  >
+    <div
+      class="page-title"
+    >
+      <h1>
+        Characters
+      </h1>
+    </div>
+    <div
+      class="search-filters-form mb-5"
+    >
+      <form>
+        <div
+          class="search-title"
+        >
+          Search your hero
+        </div>
+        <div
+          class="search-header__list"
+        >
+          <h3>
+            Name
+          </h3>
+          <h3>
+            Comic
+          </h3>
+          <h3>
+            Story
+          </h3>
+        </div>
+        <div
+          class="search-select"
+        >
+          <div
+            class="search-value"
+          >
+            <input
+              autocomplete="off"
+              class="search-input"
+              name="name"
+              placeholder="Hero´s name"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="search-value"
+          >
+            <select
+              class="search-select"
+            >
+              <option
+                value=""
+              >
+                Select a comic
+              </option>
+            </select>
+          </div>
+          <div
+            class="search-value"
+          >
+            <select
+              class="search-select"
+            >
+              <option
+                value=""
+              >
+                Select a story
+              </option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="loading"
+    >
+      <div
+        class="lds-dual-ring"
+      />
+    </div>
+    
+    <div
+      class="cards"
+    >
+      <div
+        class="cards-content"
+      />
+    </div>
+  </div>
+</div>
+`;
