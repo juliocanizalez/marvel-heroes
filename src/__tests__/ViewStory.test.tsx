@@ -24,11 +24,14 @@ describe('Test on ViewStoryPage', () => {
       { route: '/stories/1' },
     );
 
-    await waitFor(() => {
-      expect(container.querySelector('.image-header-title')).not.toBeNull();
-      expect(screen.getByText(/Original Issue/i)).toBeInTheDocument();
-      expect(container).toMatchSnapshot();
-    });
+    await waitFor(
+      () => {
+        expect(container.querySelector('.image-header-title')).not.toBeNull();
+        expect(screen.getByText(/Original Issue/i)).toBeInTheDocument();
+        expect(container).toMatchSnapshot();
+      },
+      { timeout: 2500 },
+    );
   });
 
   test('should show character and comic list correctly', async () => {
@@ -100,7 +103,7 @@ describe('Test on ViewStoryPage', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(/Could not load story 😓/i)).toBeInTheDocument();
+      expect(screen.getByText(/Could not load story 😓/i));
     });
   });
 });

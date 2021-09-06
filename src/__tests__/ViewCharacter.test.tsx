@@ -8,6 +8,7 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { rest } from 'msw';
 import { createMemoryHistory } from 'history';
+import '@testing-library/jest-dom/extend-expect';
 
 import store from '../store/store';
 import { renderWithRouter } from '../tests/utils';
@@ -24,11 +25,14 @@ describe('Test in ViewCharacterPage component', () => {
       { route: '/characters/1' },
     );
 
-    await waitFor(() => {
-      expect(container.querySelector('.image-header-title')).not.toBeNull();
-      expect(container.querySelector('.image-header-title')?.innerHTML).toBe('spiderman');
-      expect(container).toMatchSnapshot();
-    });
+    await waitFor(
+      () => {
+        expect(container.querySelector('.image-header-title')).not.toBeNull();
+        expect(container.querySelector('.image-header-title')?.innerHTML).toBe('spiderman');
+        expect(container).toMatchSnapshot();
+      },
+      { timeout: 2500 },
+    );
   });
 
   test('should show comic and story list correctly', async () => {
